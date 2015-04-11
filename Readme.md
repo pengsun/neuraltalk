@@ -1,4 +1,4 @@
-#NeuralTalk
+#NeuralTalk (Forked by Peng Sun for playing around)
 
 This project contains *Python+numpy* source code for learning **Multimodal Recurrent Neural Networks** that describe images with sentences.
 
