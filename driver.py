@@ -61,9 +61,9 @@ def RNNGenCost(batch, model, params, misc):
   BatchGenerator = decodeGenerator(params) # generator factory?
   wordtoix = misc['wordtoix']
 
-  # forward the RNN on each image sentence pair
-  # the generator returns a list of matrices that have word probabilities
-  # and a list of cache objects that will be needed for backprop
+  # forward the RNN on each image sentence pair and return:
+  # Ys: a list of matrices that have word probabilities
+  # gen_caches: a list of cache objects that will be needed for backprop
   Ys, gen_caches = BatchGenerator.forward(batch, model, params, misc, predict_mode = False)
 
   # compute softmax costs for all generated sentences, and the gradients on top
