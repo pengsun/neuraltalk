@@ -1,3 +1,4 @@
+"""Provide image features, sentences (image description words) and their information"""
 import json
 import os
 import random

@@ -1,3 +1,17 @@
+"""
+This script is used to predict sentences for arbitrary images
+that are located in a folder we call root_folder. It is assumed that
+the root_folder contains:
+- the raw images
+- a file tasks.txt that lists the images you'd like to use
+- a file vgg_feats.mat that contains the CNN features.
+  You'll need to use the Matlab script I provided and point it at the
+  root folder and its tasks.txt file to save the features.
+
+Then point this script at the folder and at a checkpoint model you'd
+like to evaluate.
+"""
+
 import argparse
 import json
 import time
@@ -12,19 +26,6 @@ import scipy.io
 from imagernn.solver import Solver
 from imagernn.imagernn_utils import decodeGenerator, eval_split
 
-"""
-This script is used to predict sentences for arbitrary images
-that are located in a folder we call root_folder. It is assumed that
-the root_folder contains:
-- the raw images
-- a file tasks.txt that lists the images you'd like to use
-- a file vgg_feats.mat that contains the CNN features. 
-  You'll need to use the Matlab script I provided and point it at the
-  root folder and its tasks.txt file to save the features.
-
-Then point this script at the folder and at a checkpoint model you'd
-like to evaluate.
-"""
 
 def main(params):
 

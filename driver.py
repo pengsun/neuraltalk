@@ -56,9 +56,9 @@ def preProBuildWordVocab(sentence_iterator, word_count_threshold):
   return wordtoix, ixtoword, bias_init_vector
 
 def RNNGenCost(batch, model, params, misc):
-  """ cost function, returns cost and gradients for model """
+  """ cost function, returns cost and gradients for model. do the fprop() & bprop() """
   regc = params['regc'] # regularization cost
-  BatchGenerator = decodeGenerator(params)
+  BatchGenerator = decodeGenerator(params) # generator factory?
   wordtoix = misc['wordtoix']
 
   # forward the RNN on each image sentence pair

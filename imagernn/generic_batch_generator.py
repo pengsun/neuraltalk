@@ -1,3 +1,9 @@
+"""Routines for a data (mini-)batch
+
+It delegates the single instance fprop() & bprop() to a more concrete class (e.g., lstm or rnn).
+It also implements a shorthand predict() for testing stage(?).
+"""
+
 import numpy as np
 import code
 from imagernn.utils import merge_init_structs, initw, accumNpDicts
@@ -13,8 +19,8 @@ def decodeGenerator(generator):
     raise Exception('generator %s is not yet supported' % (base_generator_str,))
 
 class GenericBatchGenerator:
-  """ 
-  Base batch generator class. 
+  """
+  Base batch generator class.
   This class is aware of the fact that we are generating
   sentences from images.
   """

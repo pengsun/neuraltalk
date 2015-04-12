@@ -1,3 +1,10 @@
+""" Numeric Optimization Algorithms
+
+The gradient descent updating. It delegates the gradient calculation (fprop & bprop) to
+the cost_function (a function handle), where the corresponding methods of
+generic_batch_generator.py are called.
+"""
+
 import time
 import numpy as np
 from imagernn.utils import randi

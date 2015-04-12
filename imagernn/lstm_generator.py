@@ -26,9 +26,9 @@ class LSTMGenerator:
   @staticmethod
   def forward(Xi, Xs, model, params, **kwargs):
     """
-    Xi is 1-d array of size D (containing the image representation)
-    Xs is N x D (N time steps, rows are data containng word representations), and
-    it is assumed that the first row is already filled in as the start token. So a
+    Xi: (D,) Containing the image representation (i for image?).
+    Xs: (N,D) N time steps, rows are data containing word representations (s for sentence?).
+    The first row is always filled in as the start token. For example,
     sentence with 10 words will be of size 11xD in Xs.
     """
     predict_mode = kwargs.get('predict_mode', False)
